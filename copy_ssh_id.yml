@@ -7,7 +7,7 @@
   tasks:
    - name: Pushing SSH ID to Server(s)
      authorized_key:
-      user: david
+      user: "{{  lookup('env','LOGNAME') }}"
       state: present
       key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
 
