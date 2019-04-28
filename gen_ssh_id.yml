@@ -1,0 +1,11 @@
+---
+
+- hosts: srvubuntu
+
+  gather_facts: true
+
+  tasks:
+   - name: Create SSH_ID for current user - {{  lookup('env','LOGNAME') }}
+     shell: ssh-keygen -t rsa -N '' -f $HOME/.ssh/id_rsa
+     args:
+      creates: $HOME/.ssh/id_rsa

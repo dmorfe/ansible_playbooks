@@ -1,0 +1,13 @@
+---
+
+- hosts: servers
+
+  gather_facts: true
+
+  tasks:
+   - name: Pushing SSH ID to Server(s)
+     authorized_key:
+      user: david
+      state: present
+      key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+

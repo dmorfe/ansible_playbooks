@@ -1,0 +1,25 @@
+---
+- hosts: all
+- name: IOS Show Commands
+  gather_facts: false
+  connection: local
+  remote_user: david
+
+  vars:
+   cli:
+    host: "{{ inventory_hostname }}"
+    username: david
+    password: mantaray
+    authorize: yes
+    auth_pass: mantaray
+    transport: cli
+
+  tasks:
+   - name: show commands
+     register: command_out
+     asa_command:
+       commands:
+        - show ver
+        - show run
+       provider: "{{ cli }}"
+

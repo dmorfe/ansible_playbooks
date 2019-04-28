@@ -1,0 +1,11 @@
+---
+
+- hosts: servers
+
+  gather_facts: false
+
+- name: Creating {{  lookup('env','LOGNAME') }} SSH RSA ID
+  import_playbook: gen_ssh_id.yml
+     
+- name: Copying SSH RSA ID key to servers
+  import_playbook: copy_ssh_id.yml
