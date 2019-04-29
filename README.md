@@ -1,7 +1,7 @@
 # ansible_playbooks
 Ansible Playbooks
 
-# These playbooks are for the creation and deployment of current user SSH ID into linux hosts so you can run playbooks against these servers without having to enter your user/pass.
+# These playbooks are for the creation and deployment of current user SSH ID into linux hosts so you can run playbooks against these servers without having to enter your user/pass. There are few other playbooks to update servers.
 
 They can be call individually or exceute all at once by running the push_ssh_id.yml playbook.
 
