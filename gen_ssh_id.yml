@@ -1,6 +1,6 @@
 ---
 
-- hosts: srvubuntu
+- hosts: all
 
   gather_facts: true
 
